@@ -1,18 +1,7 @@
-<!DOCTYPE HTML>
-<html>
+<?php
 
-<head>
-    <title>LunaCore | Engine</title>
+$tpl = new Smarty();
+$tpl->setTemplateDir('templates');
+$tpl->setCompileDir('tmp');
 
-</head>
-
-<body>
-
-<h1>LunaCore</h1>
-<p>If you see this site, this engine is working.</p>
-
-<a href="/test/">Test something</a>
-
-</body>
-
-</html>
+$tpl->display('index.tpl');

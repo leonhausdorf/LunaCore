@@ -1,16 +1,7 @@
-<!DOCTYPE HTML>
-<html>
+<?php
 
-<head>
-    <title>LunaCore | 404</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+$tpl = new Smarty();
+$tpl->setTemplateDir('templates');
+$tpl->setCompileDir('tmp');
 
-<body>
-
-<h1>404</h1>
-<p>Site not found.</p>
-
-</body>
-
-</html>
+$tpl->display('404.tpl');

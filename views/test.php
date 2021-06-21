@@ -1,7 +1,12 @@
 <?php
 
-if(isset($_GET['test'])) {
-    echo('test successful<br>Test-GET: yes<br>GET-WERT: ' . $_GET['test']);
-} else {
-    echo('test successful<br>Test-GET: no');
-}
+$tpl = new Smarty();
+$tpl->setTemplateDir('templates');
+$tpl->setCompileDir('tmp');
+
+$tpl->assign('TEST', '');
+
+if(isset($_GET['test']))
+    $tpl->assign('TEST', $_GET['test']);
+
+$tpl->display('test.tpl');
