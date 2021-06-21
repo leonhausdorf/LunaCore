@@ -14,12 +14,21 @@ class LunaCore {
      * Add new modules with require_once
      */
     public function loadModules() {
-        // Database Engine
+
+        /*
+         * Here you can load all modules from the modules folder
+         *
+         * Usage: require_once('examples/Database.php');
+         */
+
         require_once('examples/Database.php');
-        // Analytics Engine
-        require_once('examples/Analytics.php');
     }
 
+    /**
+     * Checks for LunaCore Updates
+     *
+     * NOTES: Function is not in use right now, because of the missing API endpoint in background
+     */
     public function checkForUpdates() {
         if($this->hasUpdate()) {
             error_log('[LunaCore] A new version is available. Please visit https://lunacore.eu/ and download the newest version: ' . $this->getVersion());
@@ -33,7 +42,7 @@ class LunaCore {
      * @return string - version
      */
     private function getLocalVersion() {
-        return '1.3';
+        return '1.4';
     }
 
     private function getVersion() {

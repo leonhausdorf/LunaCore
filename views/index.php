@@ -1,10 +1,3 @@
-<?php
-
-$analytics = new Analytics();
-$analytics->initializeAnalytics();
-
-?>
-
 <!DOCTYPE HTML>
 <html>
 

@@ -1,11 +1,12 @@
 # LunaCore
 
-Welcome to my GitHub and thanks for using LunaCore as your php URL route engine
+LunaCore is an URL Rewrite Engine for PHP. You can use this as main framework for your website. It supports easy module management 
+and custom url routing.
 
-More infos are following soon
+Documentation: https://lunacore.de/docs/
 
 # Any questions?
 
-Twitter: https://twitter.com/realZevyx  
-Instagram: https://twitter.com/realhausdorf  
-Discord: Zevyx#1515  
+You can contact the official support of LunaCore via Evotic
+
+Evotic: https://evotic.de/

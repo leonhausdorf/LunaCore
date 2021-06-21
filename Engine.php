@@ -3,10 +3,21 @@
 /*
  * LunaCore URL Engine
  * Developed by Leon Hausdorf
- * Version 1.2beta
+ * Version 1.3 stable
  */
 
 class Engine {
+
+    /*
+     * IMPORTANT NOTICE
+     *
+     * DO ONLY EDIT THIS FILE WHEN YOU DEFINENTLY KNOW WHAT YOU DOING
+     * THIS FILE IS THE MAIN FUNCTIONALITY OF LUNACORE
+     * YOU CAN DESTROY LUNACORE WHEN YOU GIVE WRONG VALUES
+     *
+     * When you want to add new Routes go to modules->core->Routes.php
+     * For managing all modules go to modules->LunaCore.php
+     */
 
     public $core = null;
     public $routes = [];
@@ -22,28 +33,17 @@ class Engine {
 
         $this->core = new LunaCore();
         $this->core->loadEssentials();
-        // $this->core->checkForUpdates();
+        // TODO: Automated update check for LunaCore
 
         $route = new Routes();
-
-        /*
-         * Here you can define youre routes
-         */
-
-        $route->setRoute('/', 'index.php');
-        $route->setRoute('/404/', '404.php');
-
-        $route->setRoute('/test/', 'test.php');
-        $route->setRoute('/test/:test:/', 'test.php');
-
-        /*
-         * End define Routes
-         */
-
+        $route->defineCustomRoutes();
         $this->routes = $route->getRoutes();
     }
 
     /**
+     * WARNING: CHANGING THIS FUNCTION MIGHT DESTROY THE FUNCTIONALITY OF LUNACORE
+     * WARNING: ONLY EDIT THIS FUNCTION WHEN YOU DEFINENTLY KNOW WHAT YOU DOING
+     *
      * search for route in system
      * @param string $uri
      */
@@ -80,8 +80,13 @@ class Engine {
 
         }
 
-        // change route for 404 page view
+
         if(empty($this->rpath)){
+
+            /*
+             * Define Route of 404 page when the url that should loaded cannot be found
+             */
+
             $this->rpath = $this->routes['/404/'];
         }
 
@@ -95,6 +100,11 @@ class Engine {
         $this->core->loadModules();
 
         if(!@file_get_contents($this->path)) {
+
+            /*
+             * Define Route of 404 page when the loaded page has no content
+             */
+
             require_once("views/404.php");
         } else {
             require_once($this->path);
