@@ -22,6 +22,12 @@ class LunaCore {
          */
 
         require_once('examples/Database.php');
+
+        /*
+         * Experimental Smarty Integration for split php code from html code
+         */
+
+        require_once('lib/Smarty/SmartyBC.class.php');
     }
 
     /**
