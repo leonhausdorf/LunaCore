@@ -45,6 +45,8 @@ class Routes {
      * @param string $path
      */
     public function setRoute($route, $path) {
+        if(str_ends_with($route, "/"))
+            $route = mb_substr($route, 0, -1);
         $this->routes[$route] = $path;
     }
 

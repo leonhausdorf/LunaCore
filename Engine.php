@@ -1,9 +1,9 @@
 <?php
 
 /*
- * LunaCore URL Engine
- * Developed by Leon Hausdorf
- * Version 1.3 stable
+ * LunaCore
+ * © 2021 | Leon Hausdorf
+ * Version 1.4.0 STABLE
  */
 
 class Engine {
@@ -23,6 +23,7 @@ class Engine {
     public $routes = [];
     public $path = "";
     private $rpath = "";
+    private $settings;
 
     /**
      * Engine startup method
@@ -34,6 +35,7 @@ class Engine {
         $this->core = new LunaCore();
         $this->core->loadEssentials();
         // TODO: Automated update check for LunaCore
+        $this->settings = json_decode(file_get_contents('settings.json'), true);
 
         $route = new Routes();
         $route->defineCustomRoutes();
@@ -49,6 +51,8 @@ class Engine {
      */
     public function search($uri) {
         $url = $uri;
+        if(substr($uri, -1) == "/")
+            $url = mb_substr($uri, 0, -1);
 
         foreach($this->routes as $route => $durl) {
             $splitted = explode('/', $url);

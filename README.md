@@ -5,6 +5,12 @@ and custom url routing.
 
 Documentation: https://lunacore.de/docs/
 
+# Minimum requirements
+
+Because of some functions or usages we recommend you to use following versions:
+
+PHP Version: `8.0`
+
 # Any questions?
 
 You can contact the official support of LunaCore via Evotic
