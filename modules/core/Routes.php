@@ -4,28 +4,15 @@ class Routes {
 
     private $routes = [];
 
+    /**
+     * Get all Routes from routes.json
+     */
     public function defineCustomRoutes() {
+        $fileroutes = json_decode(file_get_contents("routes.json"), true);
 
-        /*
-         * Here you can define your own routes for your website
-         *
-         * Use following scheme:
-         * $this->setRoute('URL ROUTE', 'FILE TO POINT TO');
-         *
-         * There are several default routes defined to show you
-         * how LunaCore is handling the URLs
-         *
-         * Also you can define $_GET parameters by simply insert :PARAMETER:
-         *
-         * For example:
-         * :test: can accessed by $_GET['test'] in the specific file
-         */
-
-        $this->setRoute('/', 'index.php');
-        $this->setRoute('/404/', '404.php');
-
-        $this->setRoute('/test/', 'test.php');
-        $this->setRoute('/test/:test:/', 'test.php');
+        foreach ($fileroutes as $key => $row) {
+            $this->setRoute($key, $row);
+        }
 
     }
 
@@ -36,6 +23,94 @@ class Routes {
      */
     public function getRoutes() {
         return $this->routes;
+    }
+
+    /**
+     * get routes.json without cutting the / at the end
+     *
+     * @return mixed
+     */
+    public function getRawRoutes() {
+        return json_decode(file_get_contents("routes.json"), true);
+    }
+
+    /**
+     * Set a number for every route to identify them
+     *
+     * @return array
+     */
+    public function getNumberedRoutes() {
+        $routeData = [];
+        $rowCount = 0;
+        foreach ($this->getRawRoutes() as $key => $row) {
+            $routeData[++$rowCount] = [
+                'route' => $key,
+                'file' => $row
+            ];
+        }
+        return $routeData;
+    }
+
+    /**
+     * count how many routes are set up
+     *
+     * @return int
+     */
+    public function countRoutes() {
+        $rowCount = 0;
+        foreach ($this->getRawRoutes() as $key => $row) {
+            $rowCount++;
+        }
+        return $rowCount;
+    }
+
+    /**
+     * edit specific route from routes.json
+     *
+     * @param $number
+     * @param $route
+     * @param $path
+     */
+    public function editRoute($number, $route, $path) {
+        $numberedRoutes = $this->getNumberedRoutes();
+        $numberedRoutes[$number] = [
+            'route' => $route,
+            'file' => $path
+        ];
+        $routeData = [];
+        foreach($numberedRoutes as $row) {
+            $tmproute = $row['route'];
+            $routeData[$tmproute] = $row['file'];
+        }
+        file_put_contents('routes.json', json_encode($routeData));
+    }
+
+    /**
+     * add route to routes.json
+     *
+     * @param $route
+     * @param $path
+     */
+    public function addRoute($route, $path) {
+        $fileroutes = json_decode(file_get_contents("routes.json"), true);
+        $fileroutes[$route] = $path;
+        file_put_contents('routes.json', json_encode($fileroutes));
+    }
+
+    /**
+     * delete Route from routes.json
+     *
+     * @param $number
+     */
+    public function deleteRoute($number) {
+        $numberedRoutes = $this->getNumberedRoutes();
+        unset($numberedRoutes[$number]);
+        $routeData = [];
+        foreach($numberedRoutes as $row) {
+            $tmproute = $row['route'];
+            $routeData[$tmproute] = $row['file'];
+        }
+        file_put_contents('routes.json', json_encode($routeData));
     }
 
     /**

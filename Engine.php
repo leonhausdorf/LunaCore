@@ -91,7 +91,7 @@ class Engine {
              * Define Route of 404 page when the url that should loaded cannot be found
              */
 
-            $this->rpath = $this->routes['/404/'];
+            // $this->rpath = $this->routes['/404/'];
         }
 
         $this->path = "views/".$this->rpath;
