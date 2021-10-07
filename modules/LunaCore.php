@@ -7,6 +7,8 @@ class LunaCore {
      */
     public function loadEssentials() {
         require_once('core/Routes.php');
+        require_once('core/Setup.php');
+        require_once('core/Activity.php');
     }
 
     /**

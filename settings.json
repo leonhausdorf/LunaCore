@@ -1,3 +1,6 @@
 {
-  "force_slash": false
+  "setup": {
+    "auth_username": "",
+    "auth_password": ""
+  }
 }
