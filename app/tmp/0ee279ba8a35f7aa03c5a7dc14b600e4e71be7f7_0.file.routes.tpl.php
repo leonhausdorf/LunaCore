@@ -1,4 +1,28 @@
-<!doctype html>
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2022-01-19 13:28:19
+  from '/Applications/XAMPP/xamppfiles/htdocs/templates/setup/routes.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_61e803e343bb55_24147437',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '0ee279ba8a35f7aa03c5a7dc14b600e4e71be7f7' => 
+    array (
+      0 => '/Applications/XAMPP/xamppfiles/htdocs/templates/setup/routes.tpl',
+      1 => 1642595090,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:./sidenav.tpl' => 1,
+  ),
+),false)) {
+function content_61e803e343bb55_24147437 (Smarty_Internal_Template $_smarty_tpl) {
+?><!doctype html>
 <html lang="en">
 
 <head>
@@ -16,7 +40,11 @@
 
 <div class="layout layout-nav-side">
 
-    {{include file="./sidenav.tpl"}}
+    <?php ob_start();
+$_smarty_tpl->_subTemplateRender("file:./sidenav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_prefixVariable1 = ob_get_clean();
+echo $_prefixVariable1;?>
+
 
     <div class="main-container">
 
@@ -95,19 +123,49 @@
                                 </thead>
                                 <tbody>
 
-                                {{FOREACH item=row key=key from=$ROUTES}}
+                                <?php ob_start();
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['ROUTES']->value, 'row', false, 'key');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_vars['row']->value) {
+$_prefixVariable2 = ob_get_clean();
+echo $_prefixVariable2;?>
+
 
                                 <tr>
-                                    <th class="pl-3" scope="row">#{{$key}}</th>
-                                    <td>{{$row['route']}}</td>
-                                    <td>{{$row['file']}}</td>
+                                    <th class="pl-3" scope="row">#<?php ob_start();
+echo $_smarty_tpl->tpl_vars['key']->value;
+$_prefixVariable3 = ob_get_clean();
+echo $_prefixVariable3;?>
+</th>
+                                    <td><?php ob_start();
+echo $_smarty_tpl->tpl_vars['row']->value['route'];
+$_prefixVariable4 = ob_get_clean();
+echo $_prefixVariable4;?>
+</td>
+                                    <td><?php ob_start();
+echo $_smarty_tpl->tpl_vars['row']->value['file'];
+$_prefixVariable5 = ob_get_clean();
+echo $_prefixVariable5;?>
+</td>
                                     <td class="text-right pr-3">
-                                        <a href="#editModal{{$key}}" class="btn btn-sm btn-primary mr-1" data-toggle="modal">Edit</a>
-                                        <a href="#deleteModal{{$key}}" class="btn btn-sm btn-danger mr-1" data-toggle="modal">Delete</a>
+                                        <a href="#editModal<?php ob_start();
+echo $_smarty_tpl->tpl_vars['key']->value;
+$_prefixVariable6 = ob_get_clean();
+echo $_prefixVariable6;?>
+" class="btn btn-sm btn-primary mr-1" data-toggle="modal">Edit</a>
+                                        <a href="#deleteModal<?php ob_start();
+echo $_smarty_tpl->tpl_vars['key']->value;
+$_prefixVariable7 = ob_get_clean();
+echo $_prefixVariable7;?>
+" class="btn btn-sm btn-danger mr-1" data-toggle="modal">Delete</a>
                                     </td>
                                 </tr>
 
-                                <div class="modal fade" tabindex="-1" role="dialog" id="editModal{{$key}}">
+                                <div class="modal fade" tabindex="-1" role="dialog" id="editModal<?php ob_start();
+echo $_smarty_tpl->tpl_vars['key']->value;
+$_prefixVariable8 = ob_get_clean();
+echo $_prefixVariable8;?>
+">
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -120,17 +178,29 @@
 
                                                 <form action="/setup/routes/edit/" method="post">
 
-                                                    <input name="number" hidden type="number" value="{{$key}}">
+                                                    <input name="number" hidden type="number" value="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['key']->value;
+$_prefixVariable9 = ob_get_clean();
+echo $_prefixVariable9;?>
+">
 
                                                     <div class="form-group">
                                                         <label>Route</label>
-                                                        <input name="route" type="text" class="form-control" placeholder="/index/" value="{{$row['route']}}">
+                                                        <input name="route" type="text" class="form-control" placeholder="/index/" value="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['row']->value['route'];
+$_prefixVariable10 = ob_get_clean();
+echo $_prefixVariable10;?>
+">
                                                         <small class="form-text text-muted">You can change the access route here. Use :param: for using it as $_GET['param']</small>
                                                     </div>
 
                                                     <div class="form-group">
                                                         <label>File Path</label>
-                                                        <input name="path" type="text" class="form-control" placeholder="index.php" value="{{$row['file']}}">
+                                                        <input name="path" type="text" class="form-control" placeholder="index.php" value="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['row']->value['file'];
+$_prefixVariable11 = ob_get_clean();
+echo $_prefixVariable11;?>
+">
                                                         <small class="form-text text-muted">This is the path to the file you want to access.</small>
                                                     </div>
 
@@ -143,7 +213,11 @@
                                     </div>
                                 </div>
 
-                                <div class="modal fade" tabindex="-1" role="dialog" id="deleteModal{{$key}}">
+                                <div class="modal fade" tabindex="-1" role="dialog" id="deleteModal<?php ob_start();
+echo $_smarty_tpl->tpl_vars['key']->value;
+$_prefixVariable12 = ob_get_clean();
+echo $_prefixVariable12;?>
+">
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header bg-danger">
@@ -158,8 +232,16 @@
 
                                                 <form action="/setup/routes/delete/" method="post">
 
-                                                    <input name="number" hidden type="number" value="{{$key}}">
-                                                    <input name="route" hidden type="text" value="{{$row['route']}}">
+                                                    <input name="number" hidden type="number" value="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['key']->value;
+$_prefixVariable13 = ob_get_clean();
+echo $_prefixVariable13;?>
+">
+                                                    <input name="route" hidden type="text" value="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['row']->value['route'];
+$_prefixVariable14 = ob_get_clean();
+echo $_prefixVariable14;?>
+">
 
                                                     <button type="submit" class="btn btn-danger btn-block mt-2">Delete</button>
 
@@ -170,7 +252,13 @@
                                     </div>
                                 </div>
 
-                                {{/FOREACH}}
+                                <?php ob_start();
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
+$_prefixVariable15 = ob_get_clean();
+echo $_prefixVariable15;?>
+
 
                                 </tbody>
                             </table>
@@ -183,11 +271,20 @@
     </div>
 </div>
 
-<script type="text/javascript" src="/app/modules/assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="/app/modules/assets/js/popper.min.js"></script>
-<script type="text/javascript" src="/app/modules/assets/js/bootstrap.js"></script>
-<script type="text/javascript" src="/app/modules/assets/js/theme.js"></script>
+<?php echo '<script'; ?>
+ type="text/javascript" src="/app/modules/assets/js/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript" src="/app/modules/assets/js/popper.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript" src="/app/modules/assets/js/bootstrap.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript" src="/app/modules/assets/js/theme.js"><?php echo '</script'; ?>
+>
 
 </body>
 
-</html>
+</html><?php }
+}

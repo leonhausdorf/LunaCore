@@ -1,4 +1,27 @@
-<!doctype html>
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2022-01-19 13:24:20
+  from '/Applications/XAMPP/xamppfiles/htdocs/templates/index.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_61e802f4dcaf08_87594172',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'f30e244d5f9c772a7006154f0d1245c41b4cf2db' => 
+    array (
+      0 => '/Applications/XAMPP/xamppfiles/htdocs/templates/index.tpl',
+      1 => 1642595056,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_61e802f4dcaf08_87594172 (Smarty_Internal_Template $_smarty_tpl) {
+?><!doctype html>
 <html lang="en">
 
 <head>
@@ -143,11 +166,20 @@
     </div>
 </div>
 
-<script type="text/javascript" src="/app/modules/assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="/app/modules/assets/js/popper.min.js"></script>
-<script type="text/javascript" src="/app/modules/assets/js/bootstrap.js"></script>
-<script type="text/javascript" src="/app/modules/assets/js/theme.js"></script>
+<?php echo '<script'; ?>
+ type="text/javascript" src="/app/modules/assets/js/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript" src="/app/modules/assets/js/popper.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript" src="/app/modules/assets/js/bootstrap.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript" src="/app/modules/assets/js/theme.js"><?php echo '</script'; ?>
+>
 
 </body>
 
-</html>
+</html><?php }
+}

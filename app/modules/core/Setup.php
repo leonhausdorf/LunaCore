@@ -8,7 +8,7 @@ class Setup {
      * @return mixed
      */
     public function getSettings() {
-        return json_decode(file_get_contents("settings.json"), true);
+        return json_decode(file_get_contents("app/storage/settings.json"), true);
     }
 
     /**
@@ -31,7 +31,7 @@ class Setup {
         $settings = $this->getSettings();
         $settings['setup']['auth_username'] = $username;
         $settings['setup']['auth_password'] = password_hash($password, PASSWORD_DEFAULT);
-        file_put_contents('settings.json', json_encode($settings));
+        file_put_contents('app/storage/settings.json', json_encode($settings));
     }
 
     /**
