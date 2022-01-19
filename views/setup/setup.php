@@ -2,7 +2,7 @@
 
 $tpl = new Smarty();
 $tpl->setTemplateDir('templates');
-$tpl->setCompileDir('tmp');
+$tpl->setCompileDir('app/tmp');
 
 $setup = new Setup();
 if($setup->isSetup())

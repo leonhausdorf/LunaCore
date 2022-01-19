@@ -6,10 +6,10 @@
     <title>LunaCore</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A project management Bootstrap theme by Medium Rare">
-    <link href="/modules/assets/img/lunalogo.png" rel="icon" type="image/x-icon">
+    <link href="/app/modules/assets/img/lunalogo.png" rel="icon" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
-    <link href="/modules/assets/css/theme.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/app/modules/assets/css/theme.css" rel="stylesheet" type="text/css" media="all"/>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
                 <div class="col-lg-12 col-xl-12">
                     <section class="py-4 py-lg-5">
                         <div class="mb-3 d-flex justify-content-center justify-content-md-start">
-                            <img alt="Pipeline" src="/modules/assets/img/lunalogo.png" class="avatar avatar-lg mr-1"/>
+                            <img alt="Pipeline" src="/app/modules/assets/img/lunalogo.png" class="avatar avatar-lg mr-1"/>
                             <div>
                                 <span class="badge badge-success">1.4.0</span>
                             </div>
@@ -143,10 +143,10 @@
     </div>
 </div>
 
-<script type="text/javascript" src="/modules/assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="/modules/assets/js/popper.min.js"></script>
-<script type="text/javascript" src="/modules/assets/js/bootstrap.js"></script>
-<script type="text/javascript" src="/modules/assets/js/theme.js"></script>
+<script type="text/javascript" src="/app/modules/assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="/app/modules/assets/js/popper.min.js"></script>
+<script type="text/javascript" src="/app/modules/assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="/app/modules/assets/js/theme.js"></script>
 
 </body>
 

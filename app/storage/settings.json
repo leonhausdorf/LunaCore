@@ -1,1 +1,6 @@
-{"setup":{"auth_username":"admin","auth_password":"$2y$10$HPXaun66T2UsDaOpJHwb2utWAzIz9Ww\/Tb5wPf13uCxLF\/iY\/nIvS"}}
+{
+  "setup": {
+    "auth_username": "",
+    "auth_password": ""
+  }
+}

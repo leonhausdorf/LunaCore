@@ -30,12 +30,12 @@ class Engine {
      * must be executed first
      */
     public function startup() {
-        require_once('modules/LunaCore.php');
+        require_once('app/modules/LunaCore.php');
 
         $this->core = new LunaCore();
         $this->core->loadEssentials();
         // TODO: Automated update check for LunaCore
-        $this->settings = json_decode(file_get_contents('settings.json'), true);
+        $this->settings = json_decode(file_get_contents('app/storage/settings.json'), true);
 
         $route = new Routes();
         $route->defineCustomRoutes();

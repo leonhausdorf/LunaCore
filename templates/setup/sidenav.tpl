@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
     <a class="navbar-brand" href="index-2.html">
-        <img class="avatar mr-1" style="background: transparent" alt="Pipeline" src="/modules/assets/img/lunalogo.png" /> LunaCore
+        <img class="avatar mr-1" style="background: transparent" alt="Pipeline" src="/app/modules/assets/img/lunalogo.png" /> LunaCore
     </a>
     <div class="d-flex align-items-center">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
