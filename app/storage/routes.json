@@ -5,6 +5,7 @@
   "/test/:test:/": "test.php",
   "/setup/": "/setup/setup.php",
   "/setup/login/": "/setup/login.php",
+  "/setup/update/": "../app/functions/update/update.php",
   "/setup/overview/": "/setup/overview.php",
   "/setup/routes/": "/setup/routes.php",
   "/setup/routes/add/": "../app/functions/setup/routes/add.php",

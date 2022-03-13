@@ -7,6 +7,7 @@ $tpl->setCompileDir('app/tmp');
 $setup = new Setup();
 $routes = new Routes();
 $activity = new Activity();
+$update = new Updater();
 
 if(!$setup->isSetup())
     header('Location: /setup/');
@@ -16,5 +17,7 @@ if(!$setup->isLoggedIn())
 $tpl->assign('ACTIVITY', $activity->getLastActivities(7));
 $tpl->assign('COUNTROUTES', $routes->countRoutes());
 $tpl->assign('COUNTACTIVITY', $activity->countActivities());
+$tpl->assign('WANTUPDATE', $update->isNewVersionAvailable());
+$tpl->assign('UPDATEVERSION', $update->getRemoteVersion());
 
 $tpl->display('setup/overview.tpl');

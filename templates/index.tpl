@@ -25,7 +25,7 @@
                         <div class="mb-3 d-flex justify-content-center justify-content-md-start">
                             <img alt="Pipeline" src="/app/modules/assets/img/lunalogo.png" class="avatar avatar-lg mr-1"/>
                             <div>
-                                <span class="badge badge-success">1.4.0</span>
+                                <span class="badge badge-success">{$VERSION}</span>
                             </div>
                         </div>
                         <h1 class="display-4 mb-3">This is LunaCore</h1>
@@ -50,7 +50,32 @@
                         <span class="lead">Latest Updates for LunaCore</span>
                     </div>
 
-                    <article id="140">
+                    <article id="144">
+                        <h3><p><code>1.4.4</code> - updater update - 13 March 2022</p></h3>
+                        <div>
+                            <ul>
+                                <li>Added an update function to LunaCore</li>
+                                <li>Changed and added new modules
+                                    <ul>
+                                        <li>Added Updater module <code>modules/core/Updater.php</code></li>
+                                    </ul>
+                                </li>
+                                <li>Added update notify</li>
+                                <li>New library for updater
+                                    <ul>
+                                        <li>Initial setup page</li>
+                                        <li>Login page</li>
+                                        <li>Overview page</li>
+                                        <li>Routes page for edit, remove and add routes</li>
+                                    </ul>
+                                </li>
+                                <li>Version storage in <code>app/storage/version.txt</code></li>
+                                <li>Minor bug fixes</li>
+                             </ul>
+                        </div>
+                    </article>
+					
+					<article id="140">
                         <h3><p><code>1.4.0</code> - setup update - 07 October 2021</p></h3>
                         <div>
                             <ul>
