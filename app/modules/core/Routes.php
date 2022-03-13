@@ -82,7 +82,7 @@ class Routes {
             $tmproute = $row['route'];
             $routeData[$tmproute] = $row['file'];
         }
-        file_put_contents('routes.json', json_encode($routeData));
+        file_put_contents('app/storage/routes.json', json_encode($routeData));
     }
 
     /**
@@ -94,7 +94,7 @@ class Routes {
     public function addRoute($route, $path) {
         $fileroutes = json_decode(file_get_contents("app/storage/routes.json"), true);
         $fileroutes[$route] = $path;
-        file_put_contents('routes.json', json_encode($fileroutes));
+        file_put_contents('app/storage/routes.json', json_encode($fileroutes));
     }
 
     /**

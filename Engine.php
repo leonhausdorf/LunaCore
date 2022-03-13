@@ -34,7 +34,7 @@ class Engine {
 
         $this->core = new LunaCore();
         $this->core->loadEssentials();
-        // TODO: Automated update check for LunaCore
+        $this->core->checkForUpdates();
         $this->settings = json_decode(file_get_contents('app/storage/settings.json'), true);
 
         $route = new Routes();
@@ -86,12 +86,7 @@ class Engine {
 
 
         if(empty($this->rpath)){
-
-            /*
-             * Define Route of 404 page when the url that should loaded cannot be found
-             */
-
-            // $this->rpath = $this->routes['/404/'];
+            $this->rpath = $this->routes['/404/'];
         }
 
         $this->path = "views/".$this->rpath;

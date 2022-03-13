@@ -9,6 +9,10 @@ class LunaCore {
         require_once('core/Routes.php');
         require_once('core/Setup.php');
         require_once('core/Activity.php');
+        require_once('core/Updater.php');
+
+        require_once('lib/Smarty/SmartyBC.class.php');
+        require_once('lib/spyc/Spyc.php');
     }
 
     /**
@@ -24,12 +28,6 @@ class LunaCore {
          */
 
         require_once('examples/Database.php');
-
-        /*
-         * Experimental Smarty Integration for split php code from html code
-         */
-
-        require_once('lib/Smarty/SmartyBC.class.php');
     }
 
     /**
@@ -38,19 +36,41 @@ class LunaCore {
      * NOTES: Function is not in use right now, because of the missing API endpoint in background
      */
     public function checkForUpdates() {
-        if($this->hasUpdate()) {
-            error_log('[LunaCore] A new version is available. Please visit https://lunacore.eu/ and download the newest version: ' . $this->getVersion());
-            echo("<script>console.warn('[LunaCore] A new version is available. Please visit https://lunacore.eu/ and download the newest version: " . $this->getVersion() . "')</script>");
+        $update = new Updater();
+
+        echo("<script>console.log('[LunaCore] Checking for updates.');</script>");
+
+        if($update->isNewVersionAvailable()) {
+            echo("<script>console.log('[LunaCore] Update found: " . $update->getRemoteVersion() . "');</script>");
+            echo("<script>console.log('[LunaCore] Check if automatic update is required.');</script>");
+            if($update->wantsForceUpdate()) {
+                if($update->checkFilesAreWriteable()) {
+                    $update->installFiles();
+                    $update->updateVersion();
+                    echo("<script>console.log('[LunaCore] Updated LunaCore automatically.');</script>");
+                } else {
+                    error_log('[LunaCore] Cannot update. No write permissions.' . $update->getRemoteVersion());
+                    echo("<script>console.error('[LunaCore] Cannot update. No write permissions.')</script>");
+                }
+            } else {
+                echo("<script>console.log('[LunaCore] No automatic update required.');</script>");
+                error_log('[LunaCore] A new version is available. Please log in into setup and update LunaCore: ' . $update->getRemoteVersion());
+                echo("<script>console.log('[LunaCore] You can login into setup and update LunaCore to " . $update->getRemoteVersion(). "')</script>");
+            }
         } else {
-            echo("<script>console.log('[LunaCore] All fine. Have fun with LunaCore!');</script>");
+            echo("<script>console.log('[LunaCore] No updates available.');</script>");
         }
+
+
+//            error_log('[LunaCore] A new version is available. Please visit https://lunacore.eu/ and download the newest version: ' . $this->getVersion());
+//            echo("<script>console.warn('[LunaCore] A new version is available. Please visit https://lunacore.eu/ and download the newest version: " . $this->getVersion() . "')</script>");
     }
 
     /**
      * @return string - version
      */
     private function getLocalVersion() {
-        return '1.4';
+        return '1.4.2';
     }
 
     private function getVersion() {
