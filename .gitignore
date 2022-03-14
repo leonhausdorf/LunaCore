@@ -1,2 +1,4 @@
+tpm/
+app/tmp/
 .DS_Store
 .idea

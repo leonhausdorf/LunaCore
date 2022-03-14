@@ -33,7 +33,7 @@
                             A lightweight PHP framework for making your life easy<br class="d-none d-md-inline"> if you want to start on a simple but powerful base!
                         </p>
                         <div class="d-flex">
-                            <a href="https://docs.lunacore.eu/" class="btn btn-primary mr-1">Documentation</a>
+                            <a href="/setup/documentation/" class="btn btn-primary mr-1">Documentation</a>
                             <a href="/setup/login/" class="btn btn-primary">Setup</a>
                         </div>
                     </section>
@@ -49,6 +49,16 @@
                         <h1 class="display-4">Changelog</h1>
                         <span class="lead">Latest Updates for LunaCore</span>
                     </div>
+
+                    <article id="150">
+                        <h3><p><code>1.5.0</code> - documentation update - 14 March 2022</p></h3>
+                        <div>
+                            <ul>
+                                <li>Added documenation to LunaCore</li>
+                                <li>Minor bug fixes</li>
+                            </ul>
+                        </div>
+                    </article>
 
                     <article id="144">
                         <h3><p><code>1.4.4</code> - updater update - 13 March 2022</p></h3>
@@ -71,6 +81,7 @@
                                 </li>
                                 <li>Version storage in <code>app/storage/version.txt</code></li>
                                 <li>Minor bug fixes</li>
+                                <p class="mt-2">Special thanks to <a href="https://github.com/polarsoldat" target="_blank">Polarsoldat</a> for assisting</p>
                              </ul>
                         </div>
                     </article>
@@ -112,8 +123,6 @@
                                 <li>Applied fix to <code>Engine.php</code> and <code>modules/core/Routes.php</code></li>
                             </ul>
                             <p class="mt-2">Special thanks to <a href="https://github.com/hachans" target="_blank">Hachans</a> for helping with the problem</p>
-
-
                         </div>
                     </article>
 
@@ -130,30 +139,6 @@
                                     </ul>
                                 </li>
                                 <li>Integrated smarty to <code>modules/LunaCore.php</code></li>
-                            </ul>
-
-                        </div>
-                    </article>
-
-                    <article id="131">
-                        <h3> <p><code>1.3.1</code> - development update - 21 June 2021</p>
-                        </h3>
-                        <div>
-                            <ul>
-                                <li>Improved documentation for better understanding</li>
-                                <li>Changed saving location for routes
-                                    <ul>
-                                        <li>Changed from <code>Engine.php</code> to <code>modules/core/Routes.php</code>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>Removed the update checker from <code>modules/LunaCore.php</code></li>
-                                <li>Updated modules
-                                    <ul>
-                                        <li>Updated Database module <code>modules/examples/Database.php</code></li>
-                                        <li>Removed Analytics module <code>modules/examples/Analytics.php</code></li>
-                                    </ul>
-                                </li>
                             </ul>
 
                         </div>

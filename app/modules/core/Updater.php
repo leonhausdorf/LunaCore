@@ -267,9 +267,7 @@ class Updater {
     public function getRemoteVersion() {
         $content = file_get_contents("https://api.lunacore.eu/update/info.json");
         if($content === false) {
-            header("HTTP/1.0 404 File nicht gefunden");
-            echo "Datei nicht gefunden";
-            exit();
+            return $this->getCurrentVersion();
         }
         return json_decode($content, true)['version'];
     }
