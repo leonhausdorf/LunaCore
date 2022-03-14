@@ -64,26 +64,11 @@
                                 <div class="card-body">
                                     <h6 class="card-title mb-3">Latest Changelog</h6>
 
-                                    <article id="1323">
-                                        <h4><p><code>1.4.4</code> - updater update - 13 March 2022</p></h4>
+                                    <article id="150">
+                                        <h3><p><code>1.5.0</code> - documentation update - 14 March 2022</p></h3>
                                         <div>
                                             <ul>
-                                                <li>Added an update function to LunaCore</li>
-                                                <li>Changed and added new modules
-                                                    <ul>
-                                                        <li>Added Updater module <code>modules/core/Updater.php</code></li>
-                                                    </ul>
-                                                </li>
-                                                <li>Added update notify</li>
-                                                <li>New library for updater
-                                                    <ul>
-                                                        <li>Initial setup page</li>
-                                                        <li>Login page</li>
-                                                        <li>Overview page</li>
-                                                        <li>Routes page for edit, remove and add routes</li>
-                                                    </ul>
-                                                </li>
-                                                <li>Version storage in <code>app/storage/version.txt</code></li>
+                                                <li>Added documenation to LunaCore</li>
                                                 <li>Minor bug fixes</li>
                                             </ul>
                                         </div>

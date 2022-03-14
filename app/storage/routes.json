@@ -7,6 +7,7 @@
   "/setup/login/": "/setup/login.php",
   "/setup/update/": "../app/functions/update/update.php",
   "/setup/overview/": "/setup/overview.php",
+  "/setup/documentation/": "/setup/documentation.php",
   "/setup/routes/": "/setup/routes.php",
   "/setup/routes/add/": "../app/functions/setup/routes/add.php",
   "/setup/routes/edit/": "../app/functions/setup/routes/edit.php",

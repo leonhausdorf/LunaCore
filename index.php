@@ -2,6 +2,8 @@
 
 session_start();
 
+ini_set('display_errors', 1);
+
 $_SESSION['root'] = __DIR__ . '/';
 
 require_once ('Engine.php');

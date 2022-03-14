@@ -1,4 +1,27 @@
-<div class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2022-03-14 17:19:16
+  from '/Applications/XAMPP/xamppfiles/htdocs/templates/setup/sidenav.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_622f6b0441f6b2_65389466',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'daf4f742ddf5198867aec045149938d728da00d3' => 
+    array (
+      0 => '/Applications/XAMPP/xamppfiles/htdocs/templates/setup/sidenav.tpl',
+      1 => 1647274753,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_622f6b0441f6b2_65389466 (Smarty_Internal_Template $_smarty_tpl) {
+?><div class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
     <a class="navbar-brand" href="index-2.html">
         <img class="avatar mr-1" style="background: transparent" alt="Pipeline" src="/app/modules/assets/img/lunalogo.png" /> LunaCore
     </a>
@@ -35,4 +58,5 @@
             </ul>
         </div>
     </div>
-</div>
+</div><?php }
+}
