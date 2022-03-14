@@ -196,7 +196,6 @@ class Updater {
     }
 
     private function checkUpdateFilesWritable($update) {
-        $writeable = true;
         $updateFiles = $update['files']['add'];
 
         for($i = 0, $c = count($updateFiles); $i < $c; $i++) {
@@ -204,7 +203,7 @@ class Updater {
             return $this->checkFileIsWriteable($file);
         }
 
-        return $writeable;
+        return true;
     }
 
     private function checkDeleteFilesWriteable($delete) {
@@ -276,8 +275,7 @@ class Updater {
     }
 
     public function getUpdateFile() {
-        $content = file_get_contents("https://api.lunacore.eu/update/changes.yaml");
-        return $content;
+        return file_get_contents("https://api.lunacore.eu/update/changes.yaml");
     }
 
     /**
