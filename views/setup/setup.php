@@ -9,5 +9,4 @@ if($setup->isSetup())
     header('Location: /setup/overview/');
 
 
-
 $tpl->display('setup/setup.tpl');

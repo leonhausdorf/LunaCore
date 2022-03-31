@@ -19,23 +19,21 @@ class Engine {
      * For managing all modules go to modules->LunaCore.php
      */
 
-    public $core = null;
-    public $routes = [];
-    public $path = "";
-    private $rpath = "";
-    private $settings;
+    public ?LunaCore $core = null;
+    public array $routes = [];
+    public string $path = "";
+    private string $rpath = "";
 
     /**
      * Engine startup method
      * must be executed first
      */
-    public function startup() {
+    public function startup(): void{
         require_once('app/modules/LunaCore.php');
 
         $this->core = new LunaCore();
         $this->core->loadEssentials();
         $this->core->checkForUpdates();
-        $this->settings = json_decode(file_get_contents('app/storage/settings.json'), true);
 
         $route = new Routes();
         $route->defineCustomRoutes();
@@ -49,12 +47,13 @@ class Engine {
      * search for route in system
      * @param string $uri
      */
-    public function search($uri) {
-        $url = $uri;
-        if(substr($uri, -1) == "/")
+    public function search(string $uri) {
+        $url = mb_strtolower($uri);
+        if(str_ends_with($uri, "/"))
             $url = mb_substr($uri, 0, -1);
 
         foreach($this->routes as $route => $durl) {
+            $route = mb_strtolower($route);
             $splitted = explode('/', $url);
             $rurl = "";
             if($url === $route) {
@@ -64,7 +63,7 @@ class Engine {
                 $sprurl = explode('/', $route);
                 $rr = "";
                 foreach ($sprurl as $value => $key) {
-                    if(mb_substr($key, 0, 1) === ":" AND substr($key, -1) === ":"){
+                    if(mb_substr($key, 0, 1) === ":" && str_ends_with($key, ":")){
                         if(isset($splitted[$value])) {
                             $_GET[trim($key, ':')] = $splitted[$value];
                             $splitted[$value] = $key;
@@ -73,7 +72,7 @@ class Engine {
                     $rr .= $key."/";
                 }
             }
-            foreach ($splitted as $value=> $key){
+            foreach ($splitted as $value => $key){
                 $rurl .= $key."/";
             }
             $rurl = substr($rurl, 0,-1);
@@ -81,7 +80,6 @@ class Engine {
             if($route === $rurl){
                 $this->rpath = $this->routes[$rurl];
             }
-
         }
 
 
@@ -95,7 +93,7 @@ class Engine {
     /**
      * load site from search result
      */
-    public function loadSearchResult() {
+    public function loadSearchResult(): void{
         $this->core->loadModules();
 
         if(!@file_get_contents($this->path)) {

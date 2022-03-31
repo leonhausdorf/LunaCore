@@ -32,7 +32,7 @@ class Activity {
         return json_decode(file_get_contents('app/storage/activity.json'), true);
     }
 
-    public function countActivities() {
+    public function countActivities(): int{
         $count = 0;
         foreach ($this->getActivities() as $row) {
             $count++;
@@ -40,7 +40,7 @@ class Activity {
         return $count;
     }
 
-    public function getLastActivities($max = 5) {
+    public function getLastActivities($max = 5): array{
         $data = array_reverse($this->getActivities());
         if($this->countActivities() < $max)
             return $data;

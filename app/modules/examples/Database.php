@@ -16,17 +16,17 @@ class Database {
      * The data will be secure unless you make this public or everyone can access the files
      */
 
-    private $DATABASE_HOST = '127.0.0.1';
-    private $DATABSE_NAME = 'lunacore';
-    private $DATABASE_USER = 'root';
-    private $DATABASE_PASSWORD = '';
+    private string $DATABASE_HOST = '127.0.0.1';
+    private string $DATABSE_NAME = 'lunacore';
+    private string $DATABASE_USER = 'root';
+    private string $DATABASE_PASSWORD = '';
 
     /**
      * initiate the database connections
      *
      * @return PDO
      */
-    private function initiateConnection() {
+    private function initiateConnection(): PDO{
         return new PDO('mysql:host=' . $this->DATABASE_HOST . ';dbname=' . $this->DATABSE_NAME, $this->DATABASE_USER, $this->DATABASE_PASSWORD);
     }
 
@@ -35,7 +35,7 @@ class Database {
      *
      * @return PDO
      */
-    public function getConnection() {
+    public function getConnection(): PDO{
         return $this->initiateConnection();
     }
 
@@ -46,7 +46,7 @@ class Database {
      * @param $query
      * @return PDO|boolean
      */
-    public function executeQuery($query) {
+    public function executeQuery($query): PDO|bool{
         return $this->getConnection()->query($query);
     }
 
@@ -57,7 +57,7 @@ class Database {
      * @param $query
      * @return array
      */
-    public function fetchAllQuery($query) {
+    public function fetchAllQuery($query): array{
         return $this->getConnection()->query($query)->fetchAll();
     }
 

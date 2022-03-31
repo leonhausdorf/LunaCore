@@ -1,17 +1,1 @@
-{
-  "/": "index.php",
-  "/404/": "404.php",
-  "/test/": "test.php",
-  "/test/:test:/": "test.php",
-  "/setup/": "/setup/setup.php",
-  "/setup/login/": "/setup/login.php",
-  "/setup/update/": "../app/functions/update/update.php",
-  "/setup/overview/": "/setup/overview.php",
-  "/setup/routes/": "/setup/routes.php",
-  "/setup/routes/add/": "../app/functions/setup/routes/add.php",
-  "/setup/routes/edit/": "../app/functions/setup/routes/edit.php",
-  "/setup/routes/delete/": "../app/functions/setup/routes/delete.php",
-  "/setup/credentials/": "../app/functions/setup/credentials.php",
-  "/setup/login/logon/": "../app/functions/setup/login.php",
-  "/setup/login/logout/": "../app/functions/setup/logout.php"
-}
+{"\/":"index.php","\/404\/":"404.php","\/test\/":"test.php","\/test\/:test:\/":"test.php","\/setup\/":"\/setup\/setup.php","\/setup\/login\/":"\/setup\/login.php","\/setup\/update\/":"..\/app\/functions\/update\/update.php","\/setup\/overview\/":"\/setup\/overview.php","\/setup\/routes\/":"\/setup\/routes.php","\/setup\/routes\/add\/":"..\/app\/functions\/setup\/routes\/add.php","\/setup\/routes\/edit\/":"..\/app\/functions\/setup\/routes\/edit.php","\/setup\/routes\/delete\/":"..\/app\/functions\/setup\/routes\/delete.php","\/setup\/credentials\/":"..\/app\/functions\/setup\/credentials.php","\/setup\/login\/logon\/":"..\/app\/functions\/setup\/login.php","\/setup\/login\/logout\/":"..\/app\/functions\/setup\/logout.php","\/gay\/":"index.php"}

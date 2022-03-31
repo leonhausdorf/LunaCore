@@ -5,7 +5,7 @@ class LunaCore {
     /**
      * load essential files
      */
-    public function loadEssentials() {
+    public function loadEssentials(): void{
         require_once('core/Routes.php');
         require_once('core/Setup.php');
         require_once('core/Activity.php');
@@ -19,7 +19,7 @@ class LunaCore {
      * load modules from modules folder.
      * Add new modules with require_once
      */
-    public function loadModules() {
+    public function loadModules(): void{
 
         /*
          * Here you can load all modules from the modules folder
@@ -35,7 +35,7 @@ class LunaCore {
      *
      * NOTES: Function is not in use right now, because of the missing API endpoint in background
      */
-    public function checkForUpdates() {
+    public function checkForUpdates(): void{
         $update = new Updater();
 
         echo("<script>console.log('[LunaCore] Checking for updates.');</script>");
@@ -69,19 +69,19 @@ class LunaCore {
     /**
      * @return string - version
      */
-    private function getLocalVersion() {
+    private function getLocalVersion(): string{
         return '1.4.2';
     }
 
     private function getVersion() {
-        $request = file_get_contents('https://api.lunacore.eu/info/');
-        return json_decode($request, true)['version'];
+        return json_decode(file_get_contents('https://api.lunacore.eu/info/'), true)['version'];
     }
 
     /**
      * check if lunacore has a update
      */
-    private function hasUpdate() {
+    private function hasUpdate(): bool
+    {
         $request = file_get_contents('https://api.lunacore.eu/info/');
 
         if($request == "") {
